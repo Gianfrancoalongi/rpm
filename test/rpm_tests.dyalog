@@ -19,5 +19,13 @@
           b←b+#.rpm.horizontal_staff(3 3)
           #.rpm.window b
       }
+      
+      add_square_TEST←{
+          #.UT.expect←↑(1 1 0)(1 1 0)(0 0 0)
+          b←#.rpm.new_board
+          b←b+#.rpm.square(2 2)
+          #.rpm.window b
+      }
+     
 
 :EndNameSpace
