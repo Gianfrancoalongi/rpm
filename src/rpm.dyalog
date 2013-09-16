@@ -6,4 +6,9 @@
           t[⍳3+⊃⍵;2⊃⍵]←1
           t
       }
+      horizontal_staff←{
+          t←7 7⍴0
+          t[⊃⍵;⍳3+2⊃⍵]←1
+          t
+      }
 :EndNameSpace
