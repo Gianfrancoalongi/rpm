@@ -1,0 +1,3 @@
+:NameSpace rpm
+
+:EndNameSpace
