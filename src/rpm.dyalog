@@ -22,7 +22,10 @@
           t
       }
     merge←{ ⊃∨/⍵ }
-    represent←{' ■'[1+⍵]}
+      represent←{
+          2∊⍵:' ▤▥▦'[1+⍵]
+          ' ■'[1+⍵]
+      }
     superimpose←{ ⊃+/ ⍵ × ⍳(⍴⍵) }
     
 :EndNameSpace
