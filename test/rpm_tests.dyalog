@@ -23,6 +23,11 @@
           b←#.rpm.square(2 2)
           #.rpm.window b
       }
-     
+                                                
+      corners_TEST←{
+          #.UT.expect←↑(1 0 1)(0 0 0)(1 0 1)
+          b←#.rpm.corners(3 3)
+          #.rpm.window b
+      }
 
 :EndNameSpace
