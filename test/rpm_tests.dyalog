@@ -43,5 +43,13 @@
           b←#.rpm.corners(3 3)
           #.rpm.represent #.rpm.window b
       }
+      
+      layers_can_be_superimposed_TEST←{
+          #.UT.expect←↑(0 1 0)(2 3 2)(0 1 0)
+          l1←#.rpm.vertical_staff(3 4)
+          l2←#.rpm.horizontal_staff(4 3)
+          b←#.rpm.superimpose l1 l2
+          #.rpm.window b
+      }
 
 :EndNameSpace

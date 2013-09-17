@@ -23,5 +23,6 @@
       }
     merge←{ ⊃∨/⍵ }
     represent←{' ■'[1+⍵]}
+    superimpose←{ ⊃+/ ⍵ × ⍳(⍴⍵) }
     
 :EndNameSpace
