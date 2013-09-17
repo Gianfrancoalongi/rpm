@@ -37,5 +37,11 @@
           b←#.rpm.merge l1 l2
           #.rpm.window b
       }
+      
+      merged_layers_are_represented_with_filled_squares_TEST←{
+          #.UT.expect←↑'■ ■' '   ' '■ ■'
+          b←#.rpm.corners(3 3)
+          #.rpm.represent #.rpm.window b
+      }
 
 :EndNameSpace

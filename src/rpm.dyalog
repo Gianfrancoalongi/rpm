@@ -22,5 +22,6 @@
           t
       }
     merge←{ ⊃∨/⍵ }
+    represent←{' ■'[1+⍵]}
     
 :EndNameSpace
