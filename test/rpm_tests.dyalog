@@ -6,24 +6,21 @@
           #.rpm.window b
       }
       
-      add_vertical_staff_TEST←{
+      vertical_staff_TEST←{
           #.UT.expect←↑(1 0 0)(1 0 0)(1 0 0)
-          b←#.rpm.new_board
-          b←b+#.rpm.vertical_staff(3 3)
+          b←#.rpm.vertical_staff(3 3)
           #.rpm.window b
       }
       
-      add_horizontal_staff_TEST←{
+      horizontal_staff_TEST←{
           #.UT.expect←↑(1 1 1)(0 0 0)(0 0 0)
-          b←#.rpm.new_board
-          b←b+#.rpm.horizontal_staff(3 3)
+          b←#.rpm.horizontal_staff(3 3)
           #.rpm.window b
       }
       
-      add_square_TEST←{
+      square_TEST←{
           #.UT.expect←↑(1 1 0)(1 1 0)(0 0 0)
-          b←#.rpm.new_board
-          b←b+#.rpm.square(2 2)
+          b←#.rpm.square(2 2)
           #.rpm.window b
       }
      
