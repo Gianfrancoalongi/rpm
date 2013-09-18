@@ -20,7 +20,7 @@
       
       square_TEST←{
           #.UT.expect←↑(1 1 0)(1 1 0)(0 0 0)
-          b←#.rpm.square(2 2)
+          b←#.rpm.square(3 3)
           #.rpm.window b
       }
                                                 
@@ -64,6 +64,8 @@
           b←(¯1 0)(1 0)#.rpm.move l1 l2
           #.rpm.window #.rpm.merge b
       }
+      
+
       
 
 
