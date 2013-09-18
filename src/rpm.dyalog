@@ -30,4 +30,10 @@
           s3←⍺ move s2
           merge¨s1 s2 s3
       }
+      superimpose_sequence←{
+          s1←⍵
+          s2←⍺ move s1
+          s3←⍺ move s2
+          superimpose¨s1 s2 s3
+      }
 :EndNameSpace

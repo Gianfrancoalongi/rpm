@@ -75,6 +75,16 @@
           #.rpm.window¨(¯1 0)(1 0)#.rpm.merge_sequence l1 l2
       }
       
+      superimposed_sequence_generated_TEST←{
+          s1←↑(1 0 0)(0 0 0)(0 0 2)
+          s2←↑(1 0 0)(1 0 2)(0 0 2)
+          s3←↑(1 0 2)(1 0 2)(1 0 2)
+          #.UT.expect←s1 s2 s3
+          l1←#.rpm.vertical_staff(1 3)
+          l2←#.rpm.vertical_staff(5 5)
+          #.rpm.window¨(¯1 0)(1 0)#.rpm.superimpose_sequence l1 l2
+      }
+      
 
       
 
