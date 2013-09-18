@@ -8,7 +8,7 @@
       }
       horizontal_staff←{
           t←7 7⍴0
-          t[⊃⍵;⍳3+2⊃⍵]←1
+          t[⊃⍵;(¯1+2⊃⍵)+⍳3]←1
           t
       }
       square←{
