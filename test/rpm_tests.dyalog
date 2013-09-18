@@ -65,14 +65,14 @@
           #.rpm.window #.rpm.merge b
       }
       
-      sequence_generated_TEST←{
+      merged_sequence_generated_TEST←{
           s1←↑(1 0 0)(0 0 0)(0 0 1)
           s2←↑(1 0 0)(1 0 1)(0 0 1)
           s3←↑(1 0 1)(1 0 1)(1 0 1)
           #.UT.expect←s1 s2 s3
           l1←#.rpm.vertical_staff(1 3)
           l2←#.rpm.vertical_staff(5 5)
-          #.rpm.window¨(¯1 0)(1 0)#.rpm.sequence l1 l2
+          #.rpm.window¨(¯1 0)(1 0)#.rpm.merge_sequence l1 l2
       }
       
 

@@ -24,7 +24,7 @@
     merge←{ ⊃∨/⍵ }
     superimpose←{ ⊃+/ ⍵ × ⍳(⍴⍵) }
     move←{ ⊃¨ { (⊃⍺) ⊖ (2⊃⍺) ⌽ ⍵ }/ ¨ ↓ ⍉ ↑ ⍺ ⍵ }    
-      sequence←{
+      merge_sequence←{
           s1←⍵
           s2←⍺ move s1
           s3←⍺ move s2
