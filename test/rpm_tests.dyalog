@@ -39,7 +39,7 @@
       }
       
       merged_layers_are_represented_with_filled_squares_TEST←{
-          #.UT.expect←↑'■ ■' '   ' '■ ■'
+          #.UT.expect←↑'■□■' '□□□' '■□■'
           b←#.rpm.corners(3 3)
           #.rpm.represent #.rpm.window b
       }
@@ -53,7 +53,7 @@
       }
       
       superimposed_layers_are_represented_with_grids_TEST←{
-          #.UT.expect←↑' ▤ ' '▥▦▥' ' ▤ '
+          #.UT.expect←↑'□▤□' '▥▦▥' '□▤□'
           #.rpm.represent↑(0 1 0)(2 3 2)(0 1 0)
       }
       
