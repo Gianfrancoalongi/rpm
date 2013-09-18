@@ -28,4 +28,10 @@
       }
     superimpose←{ ⊃+/ ⍵ × ⍳(⍴⍵) }
     move←{ ⊃¨ { (⊃⍺) ⊖ (2⊃⍺) ⌽ ⍵ }/ ¨ ↓ ⍉ ↑ ⍺ ⍵ }    
+      sequence←{
+          s1←⍵
+          s2←⍺ move s1
+          s3←⍺ move s2
+          merge¨s1 s2 s3
+      }
 :EndNameSpace
