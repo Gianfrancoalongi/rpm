@@ -56,5 +56,15 @@
           #.UT.expect←↑' ▤ ' '▥▦▥' ' ▤ '
           #.rpm.represent↑(0 1 0)(2 3 2)(0 1 0)
       }
+      
+      move_layers_TEST←{
+          #.UT.expect←↑(1 0 0)(1 0 1)(0 0 1)
+          l1←#.rpm.vertical_staff(1 3)
+          l2←#.rpm.vertical_staff(5 5)
+          b←(¯1 0)(1 0)#.rpm.move l1 l2
+          #.rpm.window #.rpm.merge b
+      }
+      
+
 
 :EndNameSpace
