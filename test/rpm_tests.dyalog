@@ -104,8 +104,6 @@
           #.UT.expect←⍳5 5
           #.rpm.start_positions'corners'
       }
-      
-
-
+     
 :EndNameSpace
 

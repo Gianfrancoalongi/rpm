@@ -33,14 +33,23 @@
           'horizontal staff'≡⍵:(2 0)∘+¨⍳3 5
           'corners'≡⍵:⍳5 5
       }
+      random_shape←{
+          s←'square' 'vertical staff' 'horizontal staff' 'corners'
+          (?⍴s)⊃s
+      }
       test←{
           rules←¯2+?2⍴(⊂3 3)
           test_row←{
-              l1←#.rpm.vertical_staff 2+?3 3
-              l2←#.rpm.horizontal_staff 2+?3 3
+              s1←random_shape ⍬
+              s2←random_shape ⍬
+              sp1←start_positions s1
+              sp2←start_positions s2
+              l1←s1 #.rpm.shape(?⍴,sp1)⊃,sp1
+              l2←s2 #.rpm.shape(?⍴,sp2)⊃,sp2
               seq←⍵ merge_sequence l1 l2
               represent¨window¨seq
           }
+          ⎕←rules
           ⎕←test_row rules
           ⎕←'---------------'
           ⎕←test_row rules
