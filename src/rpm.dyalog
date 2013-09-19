@@ -45,8 +45,8 @@
       }
       start_positions←{
           'square'≡⍵:1+⍳4 4
-          'vertical_staff'≡⍵:(0 2)∘+¨⍳5 3
-          'horizontal_staff'≡⍵:(2 0)∘+¨⍳3 5
+          'vertical staff'≡⍵:(0 2)∘+¨⍳5 3
+          'horizontal staff'≡⍵:(2 0)∘+¨⍳3 5
           'corners'≡⍵:⍳5 5
       }
       test←{

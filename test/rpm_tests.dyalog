@@ -92,12 +92,12 @@
       
       start_position_for_vertical_staff_TEST←{
           #.UT.expect←(0 2)∘+¨⍳5 3
-          #.rpm.start_positions'vertical_staff'
+          #.rpm.start_positions'vertical staff'
       }
       
       start_positon_for_horizontal_staff_TEST←{
           #.UT.expect←(2 0)∘+¨⍳3 5
-          #.rpm.start_positions'horizontal_staff'
+          #.rpm.start_positions'horizontal staff'
       }
       
       start_position_for_corners_TEST←{
