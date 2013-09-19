@@ -14,19 +14,19 @@
       
       horizontal_staff_TEST←{
           #.UT.expect←↑(1 1 1)(0 0 0)(0 0 0)
-          b←#.rpm.horizontal_staff(3 3)
+          b←'horizontal staff'#.rpm.shape(3 3)
           #.rpm.window b
       }
       
       square_TEST←{
           #.UT.expect←↑(1 1 0)(1 1 0)(0 0 0)
-          b←#.rpm.square(3 3)
+          b←'square'#.rpm.shape(3 3)
           #.rpm.window b
       }
                                                 
       corners_TEST←{
           #.UT.expect←↑(1 0 1)(0 0 0)(1 0 1)
-          b←#.rpm.corners(3 3)
+          b←'corners'#.rpm.shape(3 3)
           #.rpm.window b
       }
       
