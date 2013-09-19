@@ -33,6 +33,7 @@
           'horizontal staff'≡⍵:(2 0)∘+¨⍳3 5
           'corners'≡⍵:⍳5 5
       }
+    coordinates←{ (,⍵)/,⍳ 7 7 }
       random_shape←{
           s←'square' 'vertical staff' 'horizontal staff' 'corners'
           (?⍴s)⊃s

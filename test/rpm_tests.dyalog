@@ -104,6 +104,12 @@
           #.UT.expect←⍳5 5
           #.rpm.start_positions'corners'
       }
+      
+      coordinates_of_shape_in_layer_TEST←{
+          #.UT.expect←(3 3)(3 4)(4 3)(4 4)
+          l←'square'#.rpm.shape(3 3)
+          #.rpm.coordinates l
+      }
      
 :EndNameSpace
 
