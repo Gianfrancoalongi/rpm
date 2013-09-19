@@ -38,9 +38,16 @@
       }
       test←{
           rules←¯2+?2⍴(⊂3 3)
-          l1←#.rpm.square 1+?3 4
-          l2←#.rpm.corners 1+?3 4
-          seq←rules superimpose_sequence l1 l2
-          represent¨window¨seq
+          test_row←{
+              l1←#.rpm.vertical_staff 2+?3 3
+              l2←#.rpm.horizontal_staff 2+?3 3
+              seq←⍵ merge_sequence l1 l2
+              represent¨window¨seq
+          }
+          ⎕←test_row rules
+          ⎕←'---------------'
+          ⎕←test_row rules
+          ⎕←'---------------'
+          ⎕←test_row rules
       }
 :EndNameSpace
