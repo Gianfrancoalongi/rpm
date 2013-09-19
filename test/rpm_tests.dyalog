@@ -95,6 +95,11 @@
           #.rpm.start_positions'vertical_staff'
       }
       
+      start_positon_for_horizontal_staff_TEST←{
+          #.UT.expect←(2 0)∘+¨⍳3 5
+          #.rpm.start_positions'horizontal_staff'
+      }
+      
 
       
 
