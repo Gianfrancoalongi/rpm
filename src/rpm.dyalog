@@ -34,6 +34,7 @@
           'corners'≡⍵:⍳5 5
       }
     coordinates←{ (,⍵)/,⍳ 7 7 }
+    visible←{ ⊃∨/(2+⍳3 3)∊coordinates ⍵ }
       random_shape←{
           s←'square' 'vertical staff' 'horizontal staff' 'corners'
           (?⍴s)⊃s

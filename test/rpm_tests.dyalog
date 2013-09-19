@@ -110,6 +110,12 @@
           l←'square'#.rpm.shape(3 3)
           #.rpm.coordinates l
       }
+      
+      shape_with_coordinate_inside_window_is_visible_TEST←{
+          #.UT.expect←1
+          l←'square'#.rpm.shape(3 3)
+          #.rpm.visible l
+      }
      
 :EndNameSpace
 
