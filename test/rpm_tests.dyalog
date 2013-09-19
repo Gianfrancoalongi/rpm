@@ -85,6 +85,11 @@
           #.rpm.window¨(¯1 0)(1 0)#.rpm.superimpose_sequence l1 l2
       }
       
+      start_positions_for_square_TEST←{
+          #.UT.expect←1+⍳4 4
+          #.rpm.start_positions'square'
+      }
+      
 
       
 

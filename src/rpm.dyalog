@@ -36,6 +36,9 @@
           s3←⍺ move s2
           superimpose¨s1 s2 s3
       }
+      start_positions←{
+          'square'≡⍵:1+⍳4 4
+      }
       test←{
           rules←¯2+?2⍴(⊂3 3)
           test_row←{
