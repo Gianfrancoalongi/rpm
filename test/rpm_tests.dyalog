@@ -90,6 +90,11 @@
           #.rpm.start_positions'square'
       }
       
+      start_position_for_vertical_staff_TEST←{
+          #.UT.expect←(0 2)∘+¨⍳5 3
+          #.rpm.start_positions'vertical_staff'
+      }
+      
 
       
 

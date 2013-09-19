@@ -38,6 +38,7 @@
       }
       start_positions←{
           'square'≡⍵:1+⍳4 4
+          'vertical_staff'≡⍵:(0 2)∘+¨⍳5 3
       }
       test←{
           rules←¯2+?2⍴(⊂3 3)
