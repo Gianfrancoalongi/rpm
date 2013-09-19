@@ -32,22 +32,22 @@
       
       layers_can_be_merged_TEST←{
           #.UT.expect←↑(0 1 0)(1 1 1)(0 1 0)
-          l1←#.rpm.vertical_staff(3 4)
-          l2←#.rpm.horizontal_staff(4 3)
+          l1←'vertical staff'#.rpm.shape(3 4)
+          l2←'horizontal staff'#.rpm.shape(4 3)
           b←#.rpm.merge l1 l2
           #.rpm.window b
       }
       
       merged_layers_are_represented_with_filled_squares_TEST←{
           #.UT.expect←↑'■□■' '□□□' '■□■'
-          b←#.rpm.corners(3 3)
+          b←'corners'#.rpm.shape(3 3)
           #.rpm.represent #.rpm.window b
       }
       
       layers_can_be_superimposed_TEST←{
           #.UT.expect←↑(0 1 0)(2 3 2)(0 1 0)
-          l1←#.rpm.vertical_staff(3 4)
-          l2←#.rpm.horizontal_staff(4 3)
+          l1←'vertical staff'#.rpm.shape(3 4)
+          l2←'horizontal staff'#.rpm.shape(4 3)
           b←#.rpm.superimpose l1 l2
           #.rpm.window b
       }
@@ -59,8 +59,8 @@
       
       move_layers_TEST←{
           #.UT.expect←↑(1 0 0)(1 0 1)(0 0 1)
-          l1←#.rpm.vertical_staff(1 3)
-          l2←#.rpm.vertical_staff(5 5)
+          l1←'vertical staff'#.rpm.shape(1 3)
+          l2←'vertical staff'#.rpm.shape(5 5)
           b←(¯1 0)(1 0)#.rpm.move l1 l2
           #.rpm.window #.rpm.merge b
       }
@@ -70,8 +70,8 @@
           s2←↑(1 0 0)(1 0 1)(0 0 1)
           s3←↑(1 0 1)(1 0 1)(1 0 1)
           #.UT.expect←s1 s2 s3
-          l1←#.rpm.vertical_staff(1 3)
-          l2←#.rpm.vertical_staff(5 5)
+          l1←'vertical staff'#.rpm.shape(1 3)
+          l2←'vertical staff'#.rpm.shape(5 5)
           #.rpm.window¨(¯1 0)(1 0)#.rpm.merge_sequence l1 l2
       }
       
@@ -80,8 +80,8 @@
           s2←↑(1 0 0)(1 0 2)(0 0 2)
           s3←↑(1 0 2)(1 0 2)(1 0 2)
           #.UT.expect←s1 s2 s3
-          l1←#.rpm.vertical_staff(1 3)
-          l2←#.rpm.vertical_staff(5 5)
+          l1←'vertical staff'#.rpm.shape(1 3)
+          l2←'vertical staff'#.rpm.shape(5 5)
           #.rpm.window¨(¯1 0)(1 0)#.rpm.superimpose_sequence l1 l2
       }
       
@@ -108,3 +108,4 @@
 
 
 :EndNameSpace
+
