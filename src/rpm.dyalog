@@ -40,6 +40,7 @@
           'square'≡⍵:1+⍳4 4
           'vertical_staff'≡⍵:(0 2)∘+¨⍳5 3
           'horizontal_staff'≡⍵:(2 0)∘+¨⍳3 5
+          'corners'≡⍵:⍳5 5
       }
       test←{
           rules←¯2+?2⍴(⊂3 3)

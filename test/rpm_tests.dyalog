@@ -100,7 +100,10 @@
           #.rpm.start_positions'horizontal_staff'
       }
       
-
+      start_position_for_corners_TEST←{
+          #.UT.expect←⍳5 5
+          #.rpm.start_positions'corners'
+      }
       
 
 
