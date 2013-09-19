@@ -1,6 +1,10 @@
 ﻿:NameSpace rpm
     new_board ← 7 7 ⍴ 0
     window←{ ⍵[2+⍳(3 3)] }
+      shape←{
+          t←7 7⍴0
+          'vertical staff'≡⍺:{t[(¯1+⊃⍵)+⍳3;2⊃⍵]←1 ⋄ t}⍵
+      }
       vertical_staff←{
           t←7 7⍴0
           t[(¯1+⊃⍵)+⍳3;2⊃⍵]←1

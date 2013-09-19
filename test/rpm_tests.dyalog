@@ -8,7 +8,7 @@
       
       vertical_staff_TEST←{
           #.UT.expect←↑(1 0 0)(1 0 0)(1 0 0)
-          b←#.rpm.vertical_staff(3 3)
+          b←'vertical staff'#.rpm.shape(3 3)
           #.rpm.window b
       }
       
