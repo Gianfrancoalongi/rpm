@@ -146,6 +146,12 @@
           rule←(¯1 1)
           'horizontal staff'#.rpm.visible_in_next_step rule
       }
+      
+      starting_position_for_corners_given_rule_to_ensure_visible_TEST←{
+          #.UT.expect←,1+⍳3 3
+          rule←(¯1 1)
+          'corners'#.rpm.visible_in_next_step rule
+      }
      
 :EndNameSpace
 
