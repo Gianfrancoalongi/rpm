@@ -122,6 +122,18 @@
           l←'square'#.rpm.shape(1 1)
           #.rpm.visible l
       }
+      
+      visible_in_window_bug_TEST←{
+          #.UT.expect←1
+          l←'square'#.rpm.shape(5 2)
+          #.rpm.visible l
+      }
+      
+      starting_position_for_shape_given_rule_to_ensure_visible_TEST←{
+          #.UT.expect←,(1 2)∘+¨⍳(3 4)
+          rule←(¯1 1)
+          'square'#.rpm.visible_in_next_step rule
+      }
      
 :EndNameSpace
 

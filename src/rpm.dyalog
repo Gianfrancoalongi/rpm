@@ -34,7 +34,17 @@
           'corners'≡⍵:⍳5 5
       }
     coordinates←{ (,⍵)/,⍳ 7 7 }
-    visible←{ ⊃∨/(2+⍳3 3)∊coordinates ⍵ }
+    visible←{ ⊃∨/(,2+⍳3 3)∊coordinates ⍵ }
+      visible_in_next_step←{
+          'square'≡⍺:{
+              rule←⍵
+              layers←'square'∘shape¨,1+⍳5 5
+              moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
+              visibles←visible¨moved
+              visibles/(,1+⍳5 5)
+          }⍵
+          ⍝visible¨⍵∘move¨'square'∘shape¨,1+⍳5 5)/(,1+⍳5 5)} ⍵
+      }
       random_shape←{
           s←'square' 'vertical staff' 'horizontal staff' 'corners'
           (?⍴s)⊃s
@@ -59,4 +69,5 @@
           ⎕←test_row rules
       }
 :EndNameSpace
+
 
