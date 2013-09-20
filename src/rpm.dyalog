@@ -50,6 +50,13 @@
               visibles←visible¨moved
               visibles/(,1+⍳3 5)
           }⍵
+          'horizontal staff'≡⍺:{
+              rule←⍵
+              layers←'horizontal staff'∘shape¨,1+⍳5 3
+              moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
+              visibles←visible¨moved
+              visibles/(,1+⍳5 3)
+          }⍵
       }
       random_shape←{
           s←'square' 'vertical staff' 'horizontal staff' 'corners'
