@@ -1,5 +1,5 @@
 ﻿:NameSpace rpm
-    new_board ← 7 7 ⍴ 0
+    new_board ← 9 9 ⍴ 0
     window←{ ⍵[2+⍳(3 3)] }
       shape←{
           t←7 7⍴0
