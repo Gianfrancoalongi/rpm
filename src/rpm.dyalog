@@ -64,15 +64,18 @@
           (?⍴s)⊃s
       }
       test←{
-          rules←¯2+?2⍴(⊂3 3)
+          rules←∪,1 0 ¯1∘.,1 0 ¯1
+          rules←rules[(?2⍴⍴rules)]
           test_row←{
               s1←random_shape ⍬
               s2←random_shape ⍬
-              sp1←start_positions s1
-              sp2←start_positions s2
-              l1←s1 #.rpm.shape(?⍴,sp1)⊃,sp1
-              l2←s2 #.rpm.shape(?⍴,sp2)⊃,sp2
-              seq←⍵ merge_sequence l1 l2
+              s1_0←s1 visible_in_next_step(⊃rules)
+              s1_1←(visible¨{(⊂⊃rules)move ⍵}¨s1∘shape¨s1_0)/s1_0
+              s2_0←s2 visible_in_next_step(⊃rules)
+              s2_1←(visible¨{(⊂⊃rules)move ⍵}¨s2∘shape¨s2_0)/s2_0
+              l1←s1 #.rpm.shape(?⍴,s1_1)⊃,s1_1
+              l2←s2 #.rpm.shape(?⍴,s2_1)⊃,s2_1
+              seq←⍵ superimpose_sequence l1 l2
               represent¨window¨seq
           }
           ⎕←rules
@@ -80,7 +83,7 @@
           ⎕←'---------------'
           ⎕←test_row rules
           ⎕←'---------------'
-          ⎕←test_row rules
+          ⎕←(2↑test_row rules)
       }
 :EndNameSpace
 
