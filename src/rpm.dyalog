@@ -1,8 +1,8 @@
 ﻿:NameSpace rpm
     new_board ← 9 9 ⍴ 0
-    window←{ ⍵[2+⍳(3 3)] }
+    window←{ ⍵[3+⍳(3 3)] }
       shape←{
-          t←7 7⍴0
+          t←9 9⍴0
           'vertical staff'≡⍺:{t[(¯1+⊃⍵)+⍳3;2⊃⍵]←1 ⋄ t}⍵
           'horizontal staff'≡⍺:{t[⊃⍵;(¯1+2⊃⍵)+⍳3]←1 ⋄ t}⍵
           'square'≡⍺:{t[(¯1+⊃⍵)+⍳2;(¯1+2⊃⍵)+⍳2]←1 ⋄ t}⍵
@@ -27,36 +27,36 @@
           s3←⍺ move s2
           superimpose¨s1 s2 s3
       }
-    coordinates←{ (,⍵)/,⍳ 7 7 }
-    visible←{ ⊃∨/(,2+⍳3 3)∊coordinates ⍵ }
+    coordinates←{ (,⍵)/,⍳ 9 9 }
+    visible←{ ⊃∨/(,3+⍳3 3)∊coordinates ⍵ }
       visible_in_next_step←{
           'square'≡⍺:{
               rule←⍵
-              layers←'square'∘shape¨,1+⍳5 5
+              layers←'square'∘shape¨,1+⍳6 6
               moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
               visibles←visible¨moved
-              visibles/(,1+⍳5 5)
+              visibles/(,1+⍳6 6)
           }⍵
           'vertical staff'≡⍺:{
               rule←⍵
-              layers←'vertical staff'∘shape¨,1+⍳3 5
+              layers←'vertical staff'∘shape¨,1+⍳5 7
               moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
               visibles←visible¨moved
-              visibles/(,1+⍳3 5)
+              visibles/(,1+⍳5 7)
           }⍵
           'horizontal staff'≡⍺:{
               rule←⍵
-              layers←'horizontal staff'∘shape¨,1+⍳5 3
+              layers←'horizontal staff'∘shape¨,1+⍳7 5
               moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
               visibles←visible¨moved
-              visibles/(,1+⍳5 3)
+              visibles/(,1+⍳7 5)
           }⍵
           'corners'≡⍺:{
               rule←⍵
-              layers←'corners'∘shape¨,1+⍳3 3
-              moved←⊃{(⊂rule)move(⊂⍵)}¨layers
+              layers←'corners'∘shape¨,1+⍳5 5
+              moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
               visibles←visible¨moved
-              visibles/(,1+⍳3 3)
+              visibles/(,1+⍳5 5)
           }⍵
       }
       random_shape←{
