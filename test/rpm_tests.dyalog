@@ -84,27 +84,7 @@
           l2←'vertical staff'#.rpm.shape(5 5)
           #.rpm.window¨(¯1 0)(1 0)#.rpm.superimpose_sequence l1 l2
       }
-      
-      start_positions_for_square_TEST←{
-          #.UT.expect←1+⍳4 4
-          #.rpm.start_positions'square'
-      }
-      
-      start_position_for_vertical_staff_TEST←{
-          #.UT.expect←(0 2)∘+¨⍳5 3
-          #.rpm.start_positions'vertical staff'
-      }
-      
-      start_positon_for_horizontal_staff_TEST←{
-          #.UT.expect←(2 0)∘+¨⍳3 5
-          #.rpm.start_positions'horizontal staff'
-      }
-      
-      start_position_for_corners_TEST←{
-          #.UT.expect←⍳5 5
-          #.rpm.start_positions'corners'
-      }
-      
+
       coordinates_of_shape_in_layer_TEST←{
           #.UT.expect←(3 3)(3 4)(4 3)(4 4)
           l←'square'#.rpm.shape(3 3)

@@ -27,12 +27,6 @@
           s3←⍺ move s2
           superimpose¨s1 s2 s3
       }
-      start_positions←{
-          'square'≡⍵:1+⍳4 4
-          'vertical staff'≡⍵:(0 2)∘+¨⍳5 3
-          'horizontal staff'≡⍵:(2 0)∘+¨⍳3 5
-          'corners'≡⍵:⍳5 5
-      }
     coordinates←{ (,⍵)/,⍳ 7 7 }
     visible←{ ⊃∨/(,2+⍳3 3)∊coordinates ⍵ }
       visible_in_next_step←{
