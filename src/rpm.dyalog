@@ -30,34 +30,16 @@
     coordinates←{ (,⍵)/,⍳ 9 9 }
     visible←{ ⊃∨/(,3+⍳3 3)∊coordinates ⍵ }
       visible_in_next_step←{
-          'square'≡⍺:{
-              rule←⍵
-              layers←'square'∘shape¨,1+⍳6 6
+          rule←⍵
+          op←{layers←⍺∘shape¨⍵
               moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
               visibles←visible¨moved
-              visibles/(,1+⍳6 6)
-          }⍵
-          'vertical staff'≡⍺:{
-              rule←⍵
-              layers←'vertical staff'∘shape¨,1+⍳5 7
-              moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
-              visibles←visible¨moved
-              visibles/(,1+⍳5 7)
-          }⍵
-          'horizontal staff'≡⍺:{
-              rule←⍵
-              layers←'horizontal staff'∘shape¨,1+⍳7 5
-              moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
-              visibles←visible¨moved
-              visibles/(,1+⍳7 5)
-          }⍵
-          'corners'≡⍺:{
-              rule←⍵
-              layers←'corners'∘shape¨,1+⍳5 5
-              moved←⊃¨{(⊂rule)move(⊂⍵)}¨layers
-              visibles←visible¨moved
-              visibles/(,1+⍳5 5)
-          }⍵
+              visibles/⍵
+          }
+          'square'≡⍺:⍺ op,1+⍳6 6
+          'vertical staff'≡⍺:⍺ op,1+⍳5 7
+          'horizontal staff'≡⍺:⍺ op,1+⍳7 5
+          'corners'≡⍺:⍺ op,1+⍳5 5
       }
       random_shape←{
           s←'square' 'vertical staff' 'horizontal staff' 'corners'
