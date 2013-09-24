@@ -41,26 +41,24 @@
           'horizontal staff'≡⍺:⍺ op,1+⍳7 5
           'corners'≡⍺:⍺ op,1+⍳5 5
       }
-      random_shape←{
-          s←'square' 'vertical staff' 'horizontal staff' 'corners'
-          (?⍴s)⊃s
-      }
+      random_shape←{s←'square' 'vertical staff' 'horizontal staff' 'corners'
+          (?⍴s)⊃s}
       test←{
           rules←∪,1 0 ¯1∘.,1 0 ¯1
           rules←rules[(?2⍴⍴rules)]
           test_row←{
-              s1←random_shape ⍬
-              s2←random_shape ⍬
-              s1_0←s1 visible_in_next_step(⊃rules)
-              s1_1←(visible¨{(⊂⊃rules)move ⍵}¨s1∘shape¨s1_0)/s1_0
-              s2_0←s2 visible_in_next_step(⊃rules)
-              s2_1←(visible¨{(⊂⊃rules)move ⍵}¨s2∘shape¨s2_0)/s2_0
-              l1←s1 #.rpm.shape(?⍴,s1_1)⊃,s1_1
-              l2←s2 #.rpm.shape(?⍴,s2_1)⊃,s2_1
+              layer_gen←{
+                  rule←⍵
+                  s1←random_shape ⍬
+                  s1_0←s1 visible_in_next_step ⍵
+                  s1_1←(visible¨{(⊂rule)move ⍵}¨s1∘shape¨s1_0)/s1_0
+                  s1 #.rpm.shape(?⍴,s1_1)⊃,s1_1
+              }
+              l1←layer_gen(⊃rules)
+              l2←layer_gen(2⊃rules)
               seq←⍵ superimpose_sequence l1 l2
               represent¨window¨seq
           }
-          ⎕←rules
           ⎕←test_row rules
           ⎕←'---------------'
           ⎕←test_row rules
