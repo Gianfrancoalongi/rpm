@@ -43,9 +43,9 @@
           b←'corners'#.rpm.shape(4 4)
           #.rpm.represent #.rpm.window b
       }
-      
+
       layers_can_be_superimposed_TEST←{
-          #.UT.expect←↑(0 1 0)(2 3 2)(0 1 0)
+          #.UT.expect←↑(0 2 0)(3 5 3)(0 2 0)
           l1←'vertical staff'#.rpm.shape(4 5)
           l2←'horizontal staff'#.rpm.shape(5 4)
           b←#.rpm.superimpose l1 l2
@@ -54,7 +54,7 @@
       
       superimposed_layers_are_represented_with_grids_TEST←{
           #.UT.expect←↑'□▤□' '▥▦▥' '□▤□'
-          #.rpm.represent↑(0 1 0)(2 3 2)(0 1 0)
+          #.rpm.represent↑(0 2 0)(3 5 3)(0 2 0)
       }
       
       move_layers_TEST←{
@@ -76,9 +76,9 @@
       }
       
       superimposed_sequence_generated_TEST←{
-          s1←↑(1 0 0)(0 0 0)(0 0 2)
-          s2←↑(1 0 0)(1 0 2)(0 0 2)
-          s3←↑(1 0 2)(1 0 2)(1 0 2)
+          s1←↑(2 0 0)(0 0 0)(0 0 3)
+          s2←↑(2 0 0)(2 0 3)(0 0 3)
+          s3←↑(2 0 3)(2 0 3)(2 0 3)
           #.UT.expect←s1 s2 s3
           l1←'vertical staff'#.rpm.shape(2 4)
           l2←'vertical staff'#.rpm.shape(6 6)
@@ -128,4 +128,5 @@
       }
      
 :EndNameSpace
+
 
