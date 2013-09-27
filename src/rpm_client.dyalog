@@ -1,4 +1,4 @@
-:NameSpace rpm_client
+﻿:NameSpace rpm_client
 
       random_shape←{
           s←'square' 'vertical staff' 'horizontal staff' 'corners'
@@ -25,7 +25,12 @@
           ⎕←'---------------'
           ⎕←test_row rules
           ⎕←'---------------'
-          ⎕←(2↑test_row rules)
+          last_row←test_row rules
+          ⎕←(2↑last_row)
+          fake_rules←(∪,1 0 ¯1∘.,1 0 ¯1)~rules
+          fakes←{(⊂⍵)#.rpm.move(⊂2⊃last_row)}¨fake_rules
+          all_options←fakes,⊂(3⊃last_row)
+          ⎕←all_options[(⍴all_options)?⍴all_options]
       }
 
 
