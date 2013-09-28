@@ -15,18 +15,14 @@
     merge←{ ⊃∨/⍵ }
     superimpose←{ ⊃+/2 3 × ⍵}
     move←{ ⊃¨ { (⊃⍺) ⊖ (2⊃⍺) ⌽ ⍵ }/ ¨ ↓ ⍉ ↑ ⍺ ⍵ }
-      merge_sequence←{
+      sequence←{
           s1←⍵
           s2←⍺ move s1
           s3←⍺ move s2
-          merge¨s1 s2 s3
+          s1 s2 s3
       }
-      superimpose_sequence←{
-          s1←⍵
-          s2←⍺ move s1
-          s3←⍺ move s2
-          superimpose¨s1 s2 s3
-      }
+    merge_sequence←{ merge ¨ ⍺ sequence ⍵}
+    superimpose_sequence←{ superimpose ¨ ⍺ sequence ⍵ }
     coordinates←{ (,⍵)/,⍳ 9 9 }
     visible←{ ⊃∨/(,3+⍳3 3)∊coordinates ⍵ }
       visible_in_next_step←{
@@ -42,3 +38,5 @@
           'corners'≡⍺:⍺ op,1+⍳5 5
       }
 :EndNameSpace
+
+
